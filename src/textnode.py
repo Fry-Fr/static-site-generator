@@ -2,28 +2,28 @@ from enum import Enum
 from typing import Optional
 
 class TextType(Enum):
-    TEXT = "text (plain)"
-    BOLD = "**Bold text**"
-    ITALIC = "_Italic text_"
-    CODE = "`Code text`"
-    LINK = "[anchor text](url)"
-    IMAGE = "![alt text](url)"
+	TEXT = "text (plain)"
+	BOLD = "**Bold text**"
+	ITALIC = "_Italic text_"
+	CODE = "`Code text`"
+	LINK = "[anchor text](url)"
+	IMAGE = "![alt text](url)"
 
 class TextNode:
-    def __init__(self, text: str, text_type: TextType, url: Optional[str] = None):
-        self.text = text
-        self.text_type = text_type
-        if text_type is TextType.IMAGE:
-            if url is None or url == "":
-                raise ValueError("url must be provided for IMAGE text_type")
-        self.url = url
+	def __init__(self, text: str, text_type: TextType, url: Optional[str] = None):
+		self.text = text
+		self.text_type = text_type
+		if text_type is TextType.IMAGE:
+			if url is None or url == "":
+				raise ValueError("Error: url must be provided for text_type IMAGE")
+		self.url = url
 
-    def __eq__(self, value):
-        if not isinstance(value, TextNode):
-            return False
-        return (self.text == value.text and
-                self.text_type == value.text_type and
-                self.url == value.url)
+	def __eq__(self, value):
+		if not isinstance(value, TextNode):
+			return False
+		return (self.text == value.text and
+						self.text_type == value.text_type and
+						self.url == value.url)
 
-    def __repr__(self):
-        return f"TextNode({self.text}, {self.text_type}, {self.url})"
+	def __repr__(self):
+		return f"TextNode({self.text}, {self.text_type}, {self.url})"
