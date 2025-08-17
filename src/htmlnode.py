@@ -1,7 +1,7 @@
 from typing import Optional
 
 class HTMLNode:
-  def __init__(self, tag: Optional[str] = None, value: Optional[str] = None, children: Optional[list['HTMLNode']] = None, props: Optional[dict[str, str]] = None):
+  def __init__(self, tag: Optional[str] = None, value: Optional[str] = None, children: Optional[list['HTMLNode']] = None, props: Optional[dict[str, Optional[str]]] = None):
     self.tag = tag
     self.value = value
     self.children = children

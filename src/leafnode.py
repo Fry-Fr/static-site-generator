@@ -2,7 +2,7 @@ from htmlnode import HTMLNode
 from typing import Optional
 
 class LeafNode(HTMLNode):
-  def __init__(self, tag: Optional[str], value: str, props: Optional[dict[str, str]] = None):
+  def __init__(self, tag: Optional[str], value: str, props: Optional[dict[str, Optional[str]]] = None):
     super().__init__(tag, value, None, props)
 
   def to_html(self) -> str:
