@@ -2,7 +2,7 @@ from htmlnode import HTMLNode
 from typing import Optional
 
 class ParentNode(HTMLNode):
-  def __init__(self, tag: str, children: list['HTMLNode'], props: Optional[dict[str, str]] = None):
+  def __init__(self, tag: str, children: list['HTMLNode'], props: Optional[dict[str, Optional[str]]] = None):
     super().__init__(tag, None, children, props)
 
   def to_html(self) -> str:
