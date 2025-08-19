@@ -1,4 +1,4 @@
-def markdown_to_blocks(markdown: str) -> list:
+def markdown_to_blocks(markdown: str) -> list[str]:
     blocks_list = str(markdown).split('\n\n')
     blocks = []
     for block in blocks_list:

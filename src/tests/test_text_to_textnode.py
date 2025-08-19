@@ -1,6 +1,6 @@
 import unittest
-from textnode import TextNode, TextType
-from text_to_textnode import text_to_textnode
+from src.textnode import TextNode, TextType
+from src.text_to_textnode import text_to_textnode
 
 class TestTextToTextNode(unittest.TestCase):
     # Test converting text to TextNode

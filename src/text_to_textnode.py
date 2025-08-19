@@ -1,5 +1,5 @@
-from split_nodes_delimiter import split_nodes_delimiter, split_nodes_image, split_nodes_link
-from textnode import TextNode, TextType
+from src.split_nodes_delimiter import split_nodes_delimiter, split_nodes_image, split_nodes_link
+from src.textnode import TextNode, TextType
 
 def text_to_textnode(text: str) -> list[TextNode]:
   original_text_node = TextNode(text, TextType.TEXT)

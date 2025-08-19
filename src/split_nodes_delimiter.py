@@ -1,6 +1,6 @@
 from enum import Enum
-from textnode import TextNode, TextType
-from extract_markdown_re import extract_markdown_images, extract_markdown_links
+from src.textnode import TextNode, TextType
+from src.extract_markdown_re import extract_markdown_images, extract_markdown_links
 
 class SplitType(Enum):
   CODE = '`'
