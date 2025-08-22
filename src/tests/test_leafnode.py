@@ -15,7 +15,7 @@ class TestLeafNode(unittest.TestCase):
     self.assertEqual(node.to_html(), "Just text")
 
   def test_leaf_to_html_empty_value_raises(self):
-    node = LeafNode("span", "")
+    node = LeafNode("span", None) # type: ignore
     with self.assertRaises(ValueError) as context:
       node.to_html()
     self.assertEqual(str(context.exception), "Error: LeafNode must have a non-empty value to convert to HTML")
