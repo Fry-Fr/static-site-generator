@@ -34,7 +34,8 @@ def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type: 
         new_nodes.append(TextNode(split_value[1], TextType.ITALIC))
     if len(split_value) > 2 and split_value[2] != '':
       new_nodes.append(TextNode(split_value[2], TextType.TEXT))
-      return split_nodes_delimiter(new_nodes, delimiter, text_type)
+      if delimiter in split_value[2]:
+        return split_nodes_delimiter(new_nodes, delimiter, text_type)
   return new_nodes
 
 def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:
