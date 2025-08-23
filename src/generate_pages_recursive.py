@@ -1,7 +1,7 @@
 import os
 from src.generate_page import generate_page
 
-def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
+def generate_pages_recursive(dir_path_content, template_path, dest_dir_path="public", basepath="/"):
     """
     Recursively generates pages from markdown files in the specified directory.
 
@@ -19,7 +19,7 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
         if os.path.isdir(item_path):
             # Recursively process subdirectories
             dest_dir_path_subdir = os.path.join(dest_dir_path, item)
-            generate_pages_recursive(item_path, template_path, dest_dir_path_subdir)
+            generate_pages_recursive(item_path, template_path, dest_dir_path_subdir, basepath)
         elif item.endswith('.md'):
             # Generate HTML page from markdown file
             output_file = os.path.join(dest_dir_path, f"index.html")
