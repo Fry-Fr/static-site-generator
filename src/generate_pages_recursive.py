@@ -23,4 +23,4 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path="pub
         elif item.endswith('.md'):
             # Generate HTML page from markdown file
             output_file = os.path.join(dest_dir_path, f"index.html")
-            generate_page(item_path, template_path, output_file)
+            generate_page(item_path, template_path, output_file, basepath)
